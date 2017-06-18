@@ -14,8 +14,22 @@ public class Volumes extends Applet {
 	int syou[] = { 2, 3, 5, 1, 4 };	// 升
 	int gou[]  = { 4, 2, 3, 1, 5 };	// 合
 
+	MyVolume val;
+	MyVolume v;
+
 	@Override
-	public void init(){
+	public void init() {
+
+		val = new MyVolume();
+
+		for (int i = 0, count = to.length; i < count; i++) {
+			v = new MyVolume();
+			v.setVolume(to[i], syou[i], gou[i]);
+		}
+
+
+
+
 	}
 
 	@Override
