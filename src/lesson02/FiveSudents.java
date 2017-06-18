@@ -11,6 +11,8 @@ import java.awt.Graphics;
  */
 public class FiveSudents extends Applet {
 
+	private static final long serialVersionUID = 1L;
+
 	public void paint(Graphics g) {
 		// 5人の学生の学習時間のデータ
 		int h[]={  2, 4,   5,  1,  3 }; // 時間のデータ
