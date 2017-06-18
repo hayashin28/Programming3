@@ -54,6 +54,7 @@ public class Volumes extends Applet {
 
 		// 体積の和を求めるメソッド
 		public MyVolume add(MyVolume x) {
+			int t, s, g;
 			return null;
 		}
 
