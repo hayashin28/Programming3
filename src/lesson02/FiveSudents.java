@@ -34,7 +34,7 @@ public class FiveSudents extends Applet {
 			t.setTime(h[i], m[i], s[i]);
 
 			// 時間の和 totalTime + t を求めて，totalTimeに代入する
-			totalTime.add(t);
+			totalTime = totalTime.add(t);
 		}
 
 		//MyTimeクラスのインスタンスを参照する変数 averageTime を宣言し、
@@ -42,7 +42,7 @@ public class FiveSudents extends Applet {
 		MyTime averageTime = new MyTime();
 
 		//時間の合計 totalTime を学生の数で割って、averageTimeに代入する
-		//(0, 0, ); // ←空白を埋める
+		averageTime.setTime(0, 0, totalTime.toSecond() / 5); // ←空白を埋める
 
 		// 平均学習時間を表示する
 		g.drawString("平均学習時間 = "+averageTime.getHour()   + "時間 "
