@@ -4,30 +4,28 @@ import java.applet.Applet;
 import java.awt.Graphics;
 
 /**
- * 体積クラス
+ * 第3回 最終課題
  * @author 林宏典（15T055）
  *
  */
 public class Volumes extends Applet {
-	
+
 	@Override
 	public void init(){
-		System.out.println();
 	}
 
 	@Override
 	public void paint(Graphics g) {
-		g.drawLine(10, 10, 10, 10);
 	}
 
-	
-	
-	
-	
+
+
+
+
 
 
 	class MyVolume {
-		
+
 		private int to;		// 斗を記憶する変数
 		private int syou;	// 升を記憶する変数
 		private int gou;	// 合を記憶する変数
