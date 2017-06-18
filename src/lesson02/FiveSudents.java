@@ -3,9 +3,13 @@ package lesson02;
 import java.applet.Applet;
 import java.awt.Graphics;
 
+/**
+ * 第2回 最終課題
+ * 時間クラスMyTimeを使って，５人の生徒の学習時間（時間，分，秒）の平均を求めて表示
+ * @author 林宏典（15T055）
+ *
+ */
 public class FiveSudents extends Applet {
-
-	private static final long serialVersionUID = 1L;
 
 	public void paint(Graphics g) {
 		// 5人の学生の学習時間のデータ
@@ -30,7 +34,7 @@ public class FiveSudents extends Applet {
 			t.setTime(h[i], m[i], s[i]);
 
 			// 時間の和 totalTime + t を求めて，totalTimeに代入する
-			totalTime =totalTime.add(t);
+			totalTime.add(t);
 		}
 
 		//MyTimeクラスのインスタンスを参照する変数 averageTime を宣言し、
@@ -38,7 +42,8 @@ public class FiveSudents extends Applet {
 		MyTime averageTime = new MyTime();
 
 		//時間の合計 totalTime を学生の数で割って、averageTimeに代入する
-		averageTime.setTime(0, 0, totalTime.toSecond() / 5);
+		//(0, 0, ); // ←空白を埋める
+
 		// 平均学習時間を表示する
 		g.drawString("平均学習時間 = "+averageTime.getHour()   + "時間 "
 									  +averageTime.getMinute() + "分 "
