@@ -10,6 +10,10 @@ import java.awt.Graphics;
  */
 public class Volumes extends Applet {
 
+	int to[]   = { 2, 4, 5, 1, 3 };	// 斗
+	int syou[] = { 2, 3, 5, 1, 4 };	// 升
+	int gou[]  = { 4, 2, 3, 1, 5 };	// 合
+
 	@Override
 	public void init(){
 	}
@@ -40,7 +44,7 @@ public class Volumes extends Applet {
 		}
 
 		// toを参照するメソッド
-		public int getTo () {return to; }
+		public int getTo () { return to; }
 
 		// syouを参照するメソッド
 		public int getSyou () { return syou; }

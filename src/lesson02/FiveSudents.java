@@ -26,7 +26,7 @@ public class FiveSudents extends Applet {
 		totalTime = new MyTime();
 
 		// 5人分の学習時間を加えていく
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0, count = h.length; i < count; i++) {
 
 			// MyTimeクラスのインスタンスを参照する変数 t を宣言し，
 			// MyTimeクラスのインスタンスを生成して代入する
