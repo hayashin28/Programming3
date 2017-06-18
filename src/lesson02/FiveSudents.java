@@ -34,7 +34,7 @@ public class FiveSudents extends Applet {
 			t.setTime(h[i], m[i], s[i]);
 
 			// 時間の和 totalTime + t を求めて，totalTimeに代入する
-			totalTime.add(t);
+			totalTime = totalTime.add(t);
 		}
 
 		//MyTimeクラスのインスタンスを参照する変数 averageTime を宣言し、
