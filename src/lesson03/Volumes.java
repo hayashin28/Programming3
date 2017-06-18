@@ -10,6 +10,8 @@ import java.awt.Graphics;
  */
 public class Volumes extends Applet {
 
+	private static final long serialVersionUID = 1L;
+	
 	int to[]   = { 2, 4, 5, 1, 3 };	// 斗
 	int syou[] = { 2, 3, 5, 1, 4 };	// 升
 	int gou[]  = { 4, 2, 3, 1, 5 };	// 合
