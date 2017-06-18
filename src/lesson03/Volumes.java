@@ -23,7 +23,12 @@ public class Volumes extends Applet {
 
 
 
-
+	/**
+	 * 体積クラス（インナークラスで定義）
+	 *
+	 * @author 林宏典（15T055）
+	 *
+	 */
 	class MyVolume {
 
 		private int to;		// 斗を記憶する変数
