@@ -32,9 +32,7 @@ public class MyVolume {
 
 		// 体積の和を求めるメソッド
 		public MyVolume add(MyVolume x) {
-			to   += x.getTo();
-			syou += x.getSyou();
-			gou  += x.getGou();
+
 
 			return this;
 		}
