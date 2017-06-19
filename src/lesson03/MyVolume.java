@@ -1,13 +1,14 @@
 package lesson03;
 
 import java.applet.Applet;
+import java.awt.Graphics;
 
-	/**
-	 *
-	 *
-	 * @author 林宏典（15T055）
-	 *
-	 */
+/**
+ *
+ *
+ * @author 林宏典（15T055）
+ *
+ */
 public class MyVolume extends Applet {
 
 		private int to;		// 斗を記憶する変数
@@ -32,4 +33,17 @@ public class MyVolume extends Applet {
 			int t, s, g;
 			return null;
 		}
+		
+		
+		
+		@Override
+		public void init() {
+			
+		}
+
+		@Override
+		public void paint(Graphics g) {
+
+		}
+
 }
