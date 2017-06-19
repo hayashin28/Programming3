@@ -14,6 +14,11 @@ public class MyVolume {
 
 		// 体積を設定するメソッド
 		public void setVolume (int t, int s, int g) {
+			//10合=1升，10升=1斗
+			to   = t + (s + g / 10) / 10;
+			syou = (s + g / 10) % 10;
+			gou  = g % 10;
+
 		}
 
 		// toを参照するメソッド
@@ -27,7 +32,10 @@ public class MyVolume {
 
 		// 体積の和を求めるメソッド
 		public MyVolume add(MyVolume x) {
-			int t, s, g;
-			return null;
+			to   += x.getTo();
+			syou += x.getSyou();
+			gou  += x.getGou();
+
+			return this;
 		}
 }

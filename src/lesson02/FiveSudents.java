@@ -47,9 +47,9 @@ public class FiveSudents extends Applet {
 		averageTime.setTime(0, 0, totalTime.toSecond() / 5); // ←空白を埋める
 
 		// 平均学習時間を表示する
-		g.drawString("平均学習時間 = "+averageTime.getHour()   + "時間 "
-									  +averageTime.getMinute() + "分 "
-									  +averageTime.getSecond() + "秒", 30, 30);
+		g.drawString("平均学習時間 = " +averageTime.getHour()   + "時間 "
+									   +averageTime.getMinute() + "分 "
+									   +averageTime.getSecond() + "秒", 30, 30);
 	}
 
 }

@@ -21,14 +21,14 @@ public class MyVolumeSummary extends Applet {
 			v.setVolume(to[i], syou[i], gou[i]);
 			v = v.add(v);
 		}
-
-
-
 	}
 
 	@Override
 	public void paint(Graphics g) {
-
+		//
+//		g.drawString("平均学習時間 = "+ averageTime.getHour()   + "時間 "
+//									  + averageTime.getMinute() + "分 "
+//									  + averageTime.getSecond() + "秒", 30, 30);
 	}
 
 }
