@@ -22,5 +22,4 @@ public class MySum {
 		sum = 0.0;
 		count = 0;
 	}
-
 }
