@@ -3,7 +3,9 @@ package lesson03;
 import java.applet.Applet;
 import java.awt.Graphics;
 
-public class Summary extends Applet {
+public class MyVolumeSummary extends Applet {
+
+	private static final long serialVersionUID = 1L;
 
 	private MyVolume v;
 
