@@ -11,7 +11,7 @@ public class MyVolumeSummary extends Applet {
 
 	@Override
 	public void init() {
-
+		//10合=1升，10升=1斗
 		int to[]   = { 2, 4, 5, 1, 3 };	// 斗
 		int syou[] = { 2, 3, 5, 1, 4 };	// 升
 		int gou[]  = { 4, 2, 3, 1, 5 };	// 合

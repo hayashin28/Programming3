@@ -14,7 +14,6 @@ public class MyVolume {
 
 		// 体積を設定するメソッド
 		public void setVolume (int t, int s, int g) {
-			//10合=1升，10升=1斗
 			to   += t;
 			syou += s;
 			gou  += g;
@@ -32,6 +31,7 @@ public class MyVolume {
 
 		// 体積の和を求めるメソッド
 		public MyVolume calculation(MyVolume x) {
+			//10合=1升，10升=1斗
 
 
 			return this;
