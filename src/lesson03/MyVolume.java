@@ -31,7 +31,7 @@ public class MyVolume {
 		public int getGou (){ return gou; }
 
 		// 体積の和を求めるメソッド
-		public MyVolume add(MyVolume x) {
+		public MyVolume calculation(MyVolume x) {
 
 
 			return this;
