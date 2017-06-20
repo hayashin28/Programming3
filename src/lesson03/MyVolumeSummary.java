@@ -19,7 +19,7 @@ public class MyVolumeSummary extends Applet {
 		for (int i = 0, count = to.length; i < count; i ++) {
 			v = new MyVolume();
 			v.setVolume(to[i], syou[i], gou[i]);
-			v = v.add(v);
+			v = v.calculation(v);
 		}
 	}
 
