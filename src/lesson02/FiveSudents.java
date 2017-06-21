@@ -5,12 +5,13 @@ import java.awt.Graphics;
 
 /**
  * 第2回 最終課題
- * 時間クラスMyTimeを使って，５人の生徒の学習時間（時間，分，秒）の平均を求めて表示
+ * 時間クラスMyTimeを使って，５人の生徒の学習時間（時間，分，秒）の
+ * 平均を求めて表示
  * @author 林宏典（15T055）
  *
  */
 public class FiveSudents extends Applet {
-
+	
 	private static final long serialVersionUID = 1L;
 
 	public void paint(Graphics g) {
