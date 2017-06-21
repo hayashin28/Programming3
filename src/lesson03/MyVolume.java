@@ -32,7 +32,7 @@ public class MyVolume {
 		// 体積の和を求めるメソッド
 		public MyVolume calculation(MyVolume x) {
 			// 10合=1升
-			syou /= 10;
+			syou +=  gou / 10;
 			gou  %= 10;
 			// 10升=1斗
 			to   += syou / 10;

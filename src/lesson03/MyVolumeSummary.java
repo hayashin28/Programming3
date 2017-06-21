@@ -16,8 +16,8 @@ public class MyVolumeSummary extends Applet {
 		int syou[] = { 2, 3, 5, 1, 4 };	// 升
 		int gou[]  = { 4, 2, 3, 1, 5 };	// 合
 
+		v = new MyVolume();
 		for (int i = 0, count = to.length; i < count; i ++) {
-			v = new MyVolume();
 			v.setVolume(to[i], syou[i], gou[i]);
 		}
 		v = v.calculation(v);
