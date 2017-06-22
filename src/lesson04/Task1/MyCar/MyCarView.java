@@ -1,4 +1,4 @@
-package lesson04;
+package lesson04.Task1.MyCar;
 
 public class MyCarView {
 
