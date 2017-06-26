@@ -8,7 +8,11 @@ public class MyCar {
 
 
 	//MyCarオブジェクトに値を設定するメソッド
-	public void setCar(String name, int power, int speed) {}
+	public void setCar(String name, int power, int speed) {
+		carName   = name;
+		hosePower = power;
+		maxSpeed  = speed;
+	}
 
 	//車名を参照するメソッド
 	public String getCarName() { return carName; }
