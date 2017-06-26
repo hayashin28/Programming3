@@ -12,7 +12,7 @@ public class MyCarView extends Applet {
 
 	private MyCar car;
 	private Button  btnName, btnPower, btnSpeed;
-
+	private int flg = 0;
 
 	@Override
 	public void init() {
@@ -27,12 +27,16 @@ public class MyCarView extends Applet {
 		btnName.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				flg = 1;
+				repaint();
 			}
 		});
 
 		btnPower.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				flg = 2;
+				repaint();
 			}
 		});
 
@@ -40,6 +44,8 @@ public class MyCarView extends Applet {
 		btnSpeed.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				flg = 3;
+				repaint();
 			}
 		});
 	}
@@ -47,6 +53,17 @@ public class MyCarView extends Applet {
 	@Override
 	public void paint(Graphics g) {
 
+		switch (flg) {
+		case 1:
+			g.drawString("車名：" + car.getCarName(), 30, 50);
+			break;
+		case 2:
+			g.drawString("馬力：" + car.getHosePower(), 30, 50);
+			break;
+		case 3:
+			g.drawString("時速：" + car.getMaxSpeed(), 30, 50);
+			break;
+		}
 	}
 
 }
