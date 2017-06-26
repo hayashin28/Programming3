@@ -20,8 +20,6 @@ public class MyCarView extends Applet{
 		car.setCar("フェラーリF430", 490, 315);
 	}
 
-
-
 	@Override
 	public void paint(Graphics g) {
 		// 車の情報を表示
