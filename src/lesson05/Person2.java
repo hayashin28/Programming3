@@ -16,10 +16,16 @@ public class Person2 extends JFrame {
 
 		private static final long serialVersionUID = 1L;
 
-		private PointCardAccount account;
+		private static PointCardAccount account;
 
-		@Override
-		public void init() {
+		public static void main(String[] args) {
+
+			// JFrameクラスのインスタンスを生成
+			new Person2();
+
+
+
+
 			// ポイントカードアカウントクラスをインスタンス化
 			account = new PointCardAccount();
 			account.initPointCardAccount("阿笠田奈", 1234, 10000);
