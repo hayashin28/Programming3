@@ -1,8 +1,8 @@
 package lesson05.lec0501util;
 
 /**
- *
- * @author hayas
+ * アカウントクラス
+ * @author 林宏典（15T055）
  *
  */
 public class PointCardAccount {
