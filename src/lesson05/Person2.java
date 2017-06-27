@@ -1,17 +1,18 @@
 package lesson05;
 
-import java.applet.Applet;
 import java.awt.Graphics;
+
+import javax.swing.JFrame;
 
 import lesson05.lec0501util.PointCardAccount;
 
 /**
- * 第5回 最終課題1
+ * 第5回 最終課題2
  * ポイントカード口座の所有者，暗証番号，残高の出力
  * @author 林宏典（15T055）
  *
  */
-public class Person2 extends Applet {
+public class Person2 extends JFrame {
 
 		private static final long serialVersionUID = 1L;
 
