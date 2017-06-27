@@ -7,7 +7,7 @@ import lesson05.lec0501util.PointCardAccount;
 
 /**
  * 第5回 最終課題1
- *
+ * ポイントカード口座の所有者，暗証番号，残高の出力
  * @author 林宏典（15T055）
  *
  */
