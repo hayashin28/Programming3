@@ -28,8 +28,6 @@ public class Person2 extends JFrame {
 			setVisible(true);
 		}
 
-
-
 		private static PointCardAccount account;
 
 		public static void main(String[] args) {
