@@ -1,5 +1,6 @@
 package lesson05;
 
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 
 import javax.swing.JFrame;
@@ -15,6 +16,19 @@ import lesson05.lec0501util.PointCardAccount;
 public class Person2 extends JFrame {
 
 		private static final long serialVersionUID = 1L;
+
+
+		// コンストラクタでフレームを初期化
+		public Person2() {
+			getContentPane().setLayout(new BorderLayout());
+
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setTitle("JFrameを使ってフレームを表示");
+			setSize(530, 100);
+			setVisible(true);
+		}
+
+
 
 		private static PointCardAccount account;
 
