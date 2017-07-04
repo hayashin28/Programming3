@@ -1,7 +1,11 @@
 package lesson05;
 
-import java.awt.BorderLayout;
 import java.awt.Graphics;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
@@ -13,18 +17,40 @@ import lesson05.lec0501util.PointCardAccount;
  * @author 林宏典（15T055）
  *
  */
-public class Person2 extends JFrame {
-
+public class Person2 extends JFrame implements ActionListener {
 		private static final long serialVersionUID = 1L;
 
+		
+		
+		
+		
 
 		// コンストラクタでフレームを初期化
 		public Person2() {
-			getContentPane().setLayout(new BorderLayout());
-
+			getContentPane().setLayout(new GridBagLayout());
+			
+		       GridBagConstraints gbc = new GridBagConstraints();
+		        gbc.fill = GridBagConstraints.BOTH;
+		/* 
+		        gbc.gridx = x;
+		        gbc.gridy = y;
+		        gbc.gridwidth = w;
+		        gbc.gridheight = h;
+		        gbl.setConstraints(b, gbc);
+		        add(b);
+		s*/	
+			
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setTitle("JFrameを使ってフレームを表示");
 			setSize(530, 100);
+			
+			Label lblpersonalCode = new Label("暗証番号");
+			add(lblpersonalCode,0,0);		
+			
+			
+			 
+			
+					
 			setVisible(true);
 		}
 
@@ -48,5 +74,10 @@ public class Person2 extends JFrame {
 			g.drawString("名前："		  + account.getName()
 		+				 "暗証番号："	  + account.getPersonalCode()
 		+				 "残りポイント：" + account.getBalancePoint(), 30, 30);
+		}
+		
+		
+		public void actionPerformed(ActionEvent e) {
+			
 		}
 }
