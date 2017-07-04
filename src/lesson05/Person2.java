@@ -1,12 +1,12 @@
 package lesson05;
 
-import java.awt.Graphics;
 import java.awt.GridBagLayout;
-import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import lesson05.lec0501util.PointCardAccount;
 
@@ -17,31 +17,67 @@ import lesson05.lec0501util.PointCardAccount;
  *
  */
 public class Person2 extends JFrame implements ActionListener {
+	
 		private static final long serialVersionUID = 1L;
-
-		
-		Label lblpersonalCode;
+		JPanel panel;
+		GridBagLayout grid;
+		JLabel lblpersonalCode;
 		
 		
 
 		// コンストラクタでフレームを初期化
 		public Person2() {
-			getContentPane().setLayout(new GridBagLayout());
+			
+			
+			
+			getPanel().setLayout(getGrid());
 			
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setTitle("JFrameを使ってフレームを表示");
 			setSize(530, 100);
 			
-			lblpersonalCode = new Label("暗証番号");
-			add(lblpersonalCode,0,0);		
-			
+			add(getlblpersonalCode("暗証番号"),0,0);		
+			                                                   
 			
 			 
 			
 					
 			setVisible(true);
+			
+			
 		}
-
+		
+		/**
+		 * 
+		 * @return
+		 */
+		private JPanel getPanel() {
+			if (panel == null) panel = new JPanel();
+			return panel;
+		}
+		
+		/**
+		 * 
+		 * @return
+		 */
+		private GridBagLayout getGrid() {
+			if (grid == null) grid = new GridBagLayout();
+			return grid;
+		}
+		
+		/**
+		 * 
+		 * @param strLbl
+		 * @return
+		 */
+		private JLabel getlblpersonalCode(String strLbl) {
+			if (lblpersonalCode == null) lblpersonalCode = new JLabel(strLbl);
+			return lblpersonalCode;
+		}
+		
+		
+		
+		
 		private static PointCardAccount account;
 
 		public static void main(String[] args) {
@@ -55,13 +91,6 @@ public class Person2 extends JFrame implements ActionListener {
 			// ポイントカードアカウントクラスをインスタンス化
 			account = new PointCardAccount();
 			account.initPointCardAccount("阿笠田奈", 1234, 10000);
-		}
-		@Override
-		public void paint(Graphics g) {
-			// 各体積を表示
-			g.drawString("名前："		  + account.getName()
-		+				 "暗証番号："	  + account.getPersonalCode()
-		+				 "残りポイント：" + account.getBalancePoint(), 30, 30);
 		}
 		
 		
