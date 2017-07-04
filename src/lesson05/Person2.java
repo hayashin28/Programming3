@@ -1,5 +1,7 @@
 package lesson05;
 
+import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import lesson05.lec0501util.PointCardAccount;
 
@@ -21,31 +24,44 @@ public class Person2 extends JFrame implements ActionListener {
 		private static final long serialVersionUID = 1L;
 		JPanel panel;
 		GridBagLayout grid;
-		JLabel lblpersonalCode;
-		
-		
+		JLabel lblPersonalCode;
+		JTextField txtPersonalCode;
+	
 
 		// コンストラクタでフレームを初期化
 		public Person2() {
-			
-			
-			
-			getPanel().setLayout(getGrid());
 			
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setTitle("JFrameを使ってフレームを表示");
 			setSize(530, 100);
 			
-			add(getlblpersonalCode("暗証番号"),0,0);		
-			                                                   
+			getPanel().setLayout(getGrid());
 			
-			 
+			GridBagConstraints gbc = new GridBagConstraints();
 			
-					
+			gbc.gridx = 0;
+			gbc.gridy = 0;
+//			gbc.gridwidth  = 1;
+//			gbc.gridheight = 2;	// 縦２つ分
+			getLblPersonalCode().setText("暗証番号");
+			getGrid().setConstraints(getLblPersonalCode(), gbc);			
+			getPanel().add(getLblPersonalCode());
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			getContentPane().add(getPanel(), BorderLayout.CENTER);
 			setVisible(true);
 			
 			
 		}
+		
+		
 		
 		/**
 		 * 
@@ -67,16 +83,21 @@ public class Person2 extends JFrame implements ActionListener {
 		
 		/**
 		 * 
-		 * @param strLbl
 		 * @return
 		 */
-		private JLabel getlblpersonalCode(String strLbl) {
-			if (lblpersonalCode == null) lblpersonalCode = new JLabel(strLbl);
-			return lblpersonalCode;
+		private JLabel getLblPersonalCode() {
+			if (lblPersonalCode == null) lblPersonalCode = new JLabel();
+			return lblPersonalCode;
 		}
 		
-		
-		
+		/**
+		 * 
+		 * @return
+		 */
+		private JTextField getTxtPersonalCode() {
+			if (txtPersonalCode == null) txtPersonalCode = new JTextField();
+			return txtPersonalCode;
+		}
 		
 		private static PointCardAccount account;
 
