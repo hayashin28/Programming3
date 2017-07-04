@@ -41,14 +41,15 @@ public class Person2 extends JFrame implements ActionListener {
 			
 			gbc.gridx = 0;
 			gbc.gridy = 0;
-//			gbc.gridwidth  = 1;
+//			gbc.gridwidth  = 1
 //			gbc.gridheight = 2;	// 縦２つ分
 			getLblPersonalCode().setText("暗証番号");
 			getGrid().setConstraints(getLblPersonalCode(), gbc);			
 			getPanel().add(getLblPersonalCode());
 			
-			
-			
+			gbc.gridx = 1;
+			getGrid().setConstraints(getTxtPersonalCode(), gbc);
+			getPanel().add(getTxtPersonalCode());
 			
 			
 			
@@ -95,9 +96,11 @@ public class Person2 extends JFrame implements ActionListener {
 		 * @return
 		 */
 		private JTextField getTxtPersonalCode() {
-			if (txtPersonalCode == null) txtPersonalCode = new JTextField();
+			if (txtPersonalCode == null) txtPersonalCode = new JTextField("", 10);
 			return txtPersonalCode;
 		}
+		
+		
 		
 		private static PointCardAccount account;
 
