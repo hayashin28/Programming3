@@ -7,11 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.NumberFormat;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import lesson05.lec0501util.PointCardAccount;
 
@@ -27,7 +28,7 @@ public class Person2 extends JFrame implements ActionListener {
 		JPanel panel;
 		GridBagLayout grid;
 		JLabel lblPersonalCode;
-		JTextField txtPersonalCode;
+		JFormattedTextField txtPersonalCode;
 	
 
 		// コンストラクタでフレームを初期化
@@ -63,8 +64,20 @@ public class Person2 extends JFrame implements ActionListener {
 			
 			getTxtPersonalCode().addKeyListener(new KeyAdapter() {
 				public void keyPressed(KeyEvent e) {
-					if (e.getKeyCode()==39) return;
-					e.consume();
+					
+					try {
+						if (!(e.getKeyCode()==8 || e.getKeyCode()==37 || e.getKeyCode()==39 || e.getKeyCode()==127)) {
+							Integer.parseInt(String.valueOf(e.getKeyChar()));
+						}
+					} catch (NumberFormatException ex) {
+						e.consume();
+					}
+					
+					
+					
+					
+					
+					
 				}
 			});
 			
@@ -110,8 +123,12 @@ public class Person2 extends JFrame implements ActionListener {
 		 * 
 		 * @return
 		 */
-		private JTextField getTxtPersonalCode() {
-			if (txtPersonalCode == null) txtPersonalCode = new JTextField("", 10);
+		private JFormattedTextField getTxtPersonalCode() {
+			if (txtPersonalCode == null) {
+				txtPersonalCode = new JFormattedTextField();
+				// 初期設定
+				NumberFormat nf = NumberFormat.getNumberInstance();
+			}
 			return txtPersonalCode;
 		}
 		
