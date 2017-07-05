@@ -5,6 +5,9 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyVetoException;
+import java.beans.VetoableChangeListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -50,9 +53,16 @@ public class Person2 extends JFrame implements ActionListener {
 			gbc.gridx = 1;
 			getGrid().setConstraints(getTxtPersonalCode(), gbc);
 			getPanel().add(getTxtPersonalCode());
+				
+				
 			
 			
-			
+			getTxtPersonalCode().addVetoableChangeListener(new VetoableChangeListener() {
+				
+				public void vetoableChange(PropertyChangeEvent evt) throws PropertyVetoException {
+					
+				}
+			});
 			
 			
 			
@@ -120,7 +130,5 @@ public class Person2 extends JFrame implements ActionListener {
 		
 		
 		public void actionPerformed(ActionEvent e) {
-
-	
 		}
 }
