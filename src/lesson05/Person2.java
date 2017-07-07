@@ -206,7 +206,10 @@ public class Person2 extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
 			}
 		} 
-		else {
+		else if (e.getSource() == getBtnPointBalance()) {
+			
+		}
+		else if (e.getSource() == getBtnPurchasePoints()) {
 			
 		}
 	}
