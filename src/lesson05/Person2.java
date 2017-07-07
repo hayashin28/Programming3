@@ -6,6 +6,7 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -27,7 +28,7 @@ public class Person2 extends JFrame implements ActionListener {
 	GridBagLayout grid;
 	JLabel lblPersonalCode;
 	JTextField txtPersonalCode;
-
+	JButton btnPointBalance, btnPurchasePoints, btnUseThePoints;
 
 	// コンストラクタでフレームを初期化
 	public Person2() {
@@ -42,8 +43,8 @@ public class Person2 extends JFrame implements ActionListener {
 
 		gbc.gridx = 0;
 		gbc.gridy = 0;
-		//			gbc.gridwidth  = 1
-		//			gbc.gridheight = 2;	// 縦２つ分
+		//	gbc.gridwidth  = 1
+		//	gbc.gridheight = 2;	// 縦２つ分
 		getLblPersonalCode().setText("暗証番号");
 		getGrid().setConstraints(getLblPersonalCode(), gbc);			
 		getPanel().add(getLblPersonalCode());
@@ -52,21 +53,29 @@ public class Person2 extends JFrame implements ActionListener {
 		getGrid().setConstraints(getTxtPersonalCode(), gbc);
 		getPanel().add(getTxtPersonalCode());
 
+		gbc.gridx = 2;
+		getBtnPointBalance().setText("ポイント照会");
+		getGrid().setConstraints(getBtnPointBalance(), gbc);
+		getPanel().add(getBtnPointBalance());
+		
+		gbc.gridx = 3;
+		getBtnPurchasePoints().setText("ポイント購入");
+		getGrid().setConstraints(getBtnPurchasePoints(), gbc);
+		getPanel().add(getBtnUseThePoints());
+				
+		gbc.gridx = 4;
+		getBtnUseThePoints().setText("ポイント利用");
+		getGrid().setConstraints(getBtnPurchasePoints(), gbc);
+		getPanel().add(getBtnUseThePoints());
+		
 		
 		
 		
 		getTxtPersonalCode().addActionListener(this);
-
-
+		getBtnPointBalance().addActionListener(this);
+		getBtnPointBalance().addActionListener(this);
+		getBtnUseThePoints().addActionListener(this);
 		
-
-
-
-
-
-
-
-
 
 		getContentPane().add(getPanel(), BorderLayout.CENTER);
 		setVisible(true);
@@ -111,20 +120,34 @@ public class Person2 extends JFrame implements ActionListener {
 	}
 
 
+	private JButton getBtnPointBalance() {
+		if (btnPointBalance == null) btnPointBalance = new JButton();
+		return btnPointBalance;
+	}
+	
+	
+	private JButton getBtnPurchasePoints() {
+		if (btnPurchasePoints == null) btnPurchasePoints = new JButton();
+		return btnPurchasePoints;
+	}
+	
+	
+	private JButton getBtnUseThePoints() {
+		if (btnUseThePoints == null) btnUseThePoints = new JButton();
+		return btnUseThePoints;
+	}
 
+	
 	private static PointCardAccount account;
 
 	public static void main(String[] args) {
 
 		// JFrameクラスのインスタンスを生成
 		new Person2();
-
-
-
-
 		// ポイントカードアカウントクラスをインスタンス化
 		account = new PointCardAccount();
 		account.initPointCardAccount("阿笠田奈", 1234, 10000);
+		
 	}
 
 
@@ -137,10 +160,10 @@ public class Person2 extends JFrame implements ActionListener {
 				}
 				else {
 					//●タイトルを付けたメッセージ出力
-					JOptionPane.showMessageDialog(null, "本文", "タイトル", JOptionPane.INFORMATION_MESSAGE);	
+					JOptionPane.showMessageDialog(null, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
 				}
 			} catch (NumberFormatException ex) {
-				JOptionPane.showMessageDialog(null, "本文", "タイトル", JOptionPane.INFORMATION_MESSAGE);	
+				JOptionPane.showMessageDialog(null, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
 			}
 		} 
 		else {
