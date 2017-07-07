@@ -63,11 +63,22 @@ public class Person2 extends JFrame implements ActionListener {
 		getGrid().setConstraints(getBtnPurchasePoints(), gbc);
 		getPanel().add(getBtnUseThePoints());
 				
+
 		gbc.gridx = 4;
 		getBtnUseThePoints().setText("ポイント利用");
 		getGrid().setConstraints(getBtnPurchasePoints(), gbc);
 		getPanel().add(getBtnUseThePoints());
 		
+		
+		gbc.gridx = 0;
+		gbc.gridy = 1;
+		getGrid().setConstraints(getTxtPoint(), gbc);
+		getPanel().add(getTxtPoint());
+
+
+		gbc.gridy = 1;
+		getGrid().setConstraints(getTxtPointBalance(), gbc);
+		getPanel().add(getTxtPointBalance());
 		
 		
 		
@@ -139,7 +150,7 @@ public class Person2 extends JFrame implements ActionListener {
 	
 	
 	private JTextField getTxtPoint() {
-		if (txtPoint == null) txtPoint = new JTextField();
+		if (txtPoint == null) txtPoint = new JTextField("", 10);
 		return txtPoint;
 	}
 	
@@ -169,9 +180,11 @@ public class Person2 extends JFrame implements ActionListener {
 
 
 	public void actionPerformed(ActionEvent e) {
+
 		if (e.getSource() == getTxtPersonalCode()) {
 			try {
 				if (account.getPersonalCode() == Integer.parseInt(getTxtPersonalCode().getText())) {
+					
 					return;													
 				}
 				else {
