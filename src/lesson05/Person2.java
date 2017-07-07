@@ -61,14 +61,14 @@ public class Person2 extends JFrame implements ActionListener {
 		gbc.gridx = 3;
 		getBtnPurchasePoints().setText("ポイント購入");
 		getGrid().setConstraints(getBtnPurchasePoints(), gbc);
-		getPanel().add(getBtnUseThePoints());
+		getPanel().add(getBtnPurchasePoints());
 				
+		
 
 		gbc.gridx = 4;
 		getBtnUseThePoints().setText("ポイント利用");
-		getGrid().setConstraints(getBtnPurchasePoints(), gbc);
+		getGrid().setConstraints(getBtnUseThePoints(), gbc);
 		getPanel().add(getBtnUseThePoints());
-		
 		
 		gbc.gridx = 0;
 		gbc.gridy = 1;
@@ -82,7 +82,7 @@ public class Person2 extends JFrame implements ActionListener {
 		getPanel().add(getLblPoint());
 		
 		gbc.gridx = 2;
-		gbc.gridwidth = 2;
+		gbc.gridwidth = 3;
 		getGrid().setConstraints(getTxtPointBalance(), gbc);
 		getPanel().add(getTxtPointBalance());
 		
@@ -90,8 +90,17 @@ public class Person2 extends JFrame implements ActionListener {
 		
 		getTxtPersonalCode().addActionListener(this);
 		getBtnPointBalance().addActionListener(this);
-		getBtnPointBalance().addActionListener(this);
+		getBtnPurchasePoints().addActionListener(this);
 		getBtnUseThePoints().addActionListener(this);
+		
+		
+		
+		getBtnPointBalance().setEnabled(false);
+		getBtnPurchasePoints().setEnabled(false);
+		getBtnUseThePoints().setEnabled(false);
+		
+		
+		
 		
 
 		getContentPane().add(getPanel(), BorderLayout.CENTER);
