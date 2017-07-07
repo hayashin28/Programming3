@@ -27,7 +27,7 @@ public class Person2 extends JFrame implements ActionListener {
 	JPanel panel;
 	GridBagLayout grid;
 	JLabel lblPersonalCode;
-	JTextField txtPersonalCode;
+	JTextField txtPersonalCode, txtPoint, txtPointBalance;
 	JButton btnPointBalance, btnPurchasePoints, btnUseThePoints;
 
 	// コンストラクタでフレームを初期化
@@ -136,6 +136,22 @@ public class Person2 extends JFrame implements ActionListener {
 		if (btnUseThePoints == null) btnUseThePoints = new JButton();
 		return btnUseThePoints;
 	}
+	
+	
+	private JTextField getTxtPoint() {
+		if (txtPoint == null) txtPoint = new JTextField();
+		return txtPoint;
+	}
+	
+	
+	
+	private JTextField getTxtPointBalance() {
+		if (txtPointBalance == null) txtPointBalance = new JTextField();
+		return txtPointBalance;
+	}
+	
+	
+	
 
 	
 	private static PointCardAccount account;
