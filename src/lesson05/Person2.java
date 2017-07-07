@@ -26,7 +26,7 @@ public class Person2 extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	JPanel panel;
 	GridBagLayout grid;
-	JLabel lblPersonalCode;
+	JLabel lblPersonalCode, lblPoint;
 	JTextField txtPersonalCode, txtPoint, txtPointBalance;
 	JButton btnPointBalance, btnPurchasePoints, btnUseThePoints;
 
@@ -76,7 +76,13 @@ public class Person2 extends JFrame implements ActionListener {
 		getPanel().add(getTxtPoint());
 
 
-		gbc.gridy = 1;
+		gbc.gridx = 1;
+		getLblPoint().setText("ポイント");
+		getGrid().setConstraints(getLblPoint(), gbc);
+		getPanel().add(getLblPoint());
+		
+		gbc.gridx = 2;
+		gbc.gridwidth = 2;
 		getGrid().setConstraints(getTxtPointBalance(), gbc);
 		getPanel().add(getTxtPointBalance());
 		
@@ -155,9 +161,14 @@ public class Person2 extends JFrame implements ActionListener {
 	}
 	
 	
+	private JLabel getLblPoint() {
+		if (lblPoint == null) lblPoint = new JLabel();
+		return lblPoint;
+	}
+	
 	
 	private JTextField getTxtPointBalance() {
-		if (txtPointBalance == null) txtPointBalance = new JTextField();
+		if (txtPointBalance == null) txtPointBalance = new JTextField("", 20);
 		return txtPointBalance;
 	}
 	
