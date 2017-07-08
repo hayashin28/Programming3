@@ -95,8 +95,6 @@ public class Person2 extends JFrame implements ActionListener {
 		setVisible(true);
 	}
 
-
-
 	/**
 	 * フレームにの乗せるパネル
 	 * @return
