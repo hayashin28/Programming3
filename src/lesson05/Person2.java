@@ -224,7 +224,7 @@ public class Person2 extends JFrame implements ActionListener {
 				account.parchasePoint(Integer.parseInt(getTxtPoint().getText()));
 				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
 			} catch(NumberFormatException ex) {
-				showMessage("入力されたポイントの数値が不正いです。", "警告");				
+				showMessage("入力されたポイントの数値が不正です。", "警告");				
 			}
 		}
 		//　ポイント利用
@@ -233,12 +233,12 @@ public class Person2 extends JFrame implements ActionListener {
 				account.usePoint(Integer.parseInt(getTxtPoint().getText()));
 				
 				if (account.getBalancePoint() < Integer.parseInt(getTxtPoint().getText())) {
-					
+					showMessage("ポイント残高が不足しています。", "警告");
+					return;
 				}
-				
 				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
 			} catch(NumberFormatException ex) {
-				showMessage("入力されたポイントの数値が不正いです。", "警告");								
+				showMessage("入力されたポイントの数値が不正です。", "警告");								
 			}
 		}
 	}
