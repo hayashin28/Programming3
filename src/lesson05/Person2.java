@@ -192,9 +192,11 @@ public class Person2 extends JFrame implements ActionListener {
 	}
 
 
-
+	/**
+	 * 
+	 */
 	public void actionPerformed(ActionEvent e) {
-
+		//
 		if (e.getSource() == getTxtPersonalCode()) {
 			getTxtPoint().setText(null);
 			getTxtPointBalance().setText(null);
@@ -205,12 +207,11 @@ public class Person2 extends JFrame implements ActionListener {
 				}
 				else {
 					setBtnEnabled(false);
-					//●タイトルを付けたメッセージ出力
-					JOptionPane.showMessageDialog(this, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
+					showMessage("アカウントが存在しません。", "警告");
 				}
 			} catch (NumberFormatException ex) {
 				setBtnEnabled(false);
-				JOptionPane.showMessageDialog(this, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
+				showMessage("アカウントが存在しません。", "警告");
 			}
 		} 
 		// ポイント残高照会
@@ -220,6 +221,7 @@ public class Person2 extends JFrame implements ActionListener {
 		// ポイント購入
 		else if (e.getSource() == getBtnPurchasePoints()) {
 			try {
+				account.parchasePoint(Integer.parseInt(getTxtPoint().getText()));
 				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
 			} catch(NumberFormatException ex) {
 				
@@ -235,15 +237,22 @@ public class Person2 extends JFrame implements ActionListener {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param bool
+	 */
 	private void setBtnEnabled(boolean bool) {
 		getBtnPointBalance().setEnabled(bool);
 		getBtnPurchasePoints().setEnabled(bool);
 		getBtnUseThePoints().setEnabled(bool);
+	}
+
+	/**
+	 * 
+	 */
+	private void showMessage(String text, String title) {
+		//●タイトルを付けたメッセージ出力
+		JOptionPane.showMessageDialog(this, text, title, JOptionPane.WARNING_MESSAGE);	
 
 	}
-	
-	
-	
-	
-	
 }
