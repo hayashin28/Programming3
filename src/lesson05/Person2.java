@@ -94,13 +94,7 @@ public class Person2 extends JFrame implements ActionListener {
 		getBtnUseThePoints().addActionListener(this);
 		
 		
-		
-		getBtnPointBalance().setEnabled(false);
-		getBtnPurchasePoints().setEnabled(false);
-		getBtnUseThePoints().setEnabled(false);
-		
-		
-		
+		setBtnEnabled(false);
 		
 
 		getContentPane().add(getPanel(), BorderLayout.CENTER);
@@ -202,24 +196,46 @@ public class Person2 extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		if (e.getSource() == getTxtPersonalCode()) {
+			getTxtPoint().setText(null);
+			getTxtPointBalance().setText(null);
+			
 			try {
 				if (account.getPersonalCode() == Integer.parseInt(getTxtPersonalCode().getText())) {
-					
-					return;													
+					setBtnEnabled(true);
 				}
 				else {
+					setBtnEnabled(false);
 					//●タイトルを付けたメッセージ出力
-					JOptionPane.showMessageDialog(null, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
+					JOptionPane.showMessageDialog(this, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
 				}
 			} catch (NumberFormatException ex) {
-				JOptionPane.showMessageDialog(null, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
+				setBtnEnabled(false);
+				JOptionPane.showMessageDialog(this, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
 			}
 		} 
+		// 利用残高照会
 		else if (e.getSource() == getBtnPointBalance()) {
 			
 		}
+		// 
 		else if (e.getSource() == getBtnPurchasePoints()) {
 			
 		}
+		//
+		else if (e.getSource() == getBtnUseThePoints()) {
+			
+		}
 	}
+	
+	private void setBtnEnabled(boolean bool) {
+		getBtnPointBalance().setEnabled(bool);
+		getBtnPurchasePoints().setEnabled(bool);
+		getBtnUseThePoints().setEnabled(bool);
+
+	}
+	
+	
+	
+	
+	
 }
