@@ -62,8 +62,6 @@ public class Person2 extends JFrame implements ActionListener {
 		getBtnPurchasePoints().setText("ポイント購入");
 		getGrid().setConstraints(getBtnPurchasePoints(), gbc);
 		getPanel().add(getBtnPurchasePoints());
-				
-		
 
 		gbc.gridx = 4;
 		getBtnUseThePoints().setText("ポイント利用");
@@ -75,7 +73,6 @@ public class Person2 extends JFrame implements ActionListener {
 		getGrid().setConstraints(getTxtPoint(), gbc);
 		getPanel().add(getTxtPoint());
 
-
 		gbc.gridx = 1;
 		getLblPoint().setText("ポイント");
 		getGrid().setConstraints(getLblPoint(), gbc);
@@ -86,17 +83,14 @@ public class Person2 extends JFrame implements ActionListener {
 		getGrid().setConstraints(getTxtPointBalance(), gbc);
 		getPanel().add(getTxtPointBalance());
 		
-		
-		
+		//各オブジェクトにイベントリスナーを登録		
 		getTxtPersonalCode().addActionListener(this);
 		getBtnPointBalance().addActionListener(this);
 		getBtnPurchasePoints().addActionListener(this);
 		getBtnUseThePoints().addActionListener(this);
 		
-		
 		setBtnEnabled(false);
 		
-
 		getContentPane().add(getPanel(), BorderLayout.CENTER);
 		setVisible(true);
 	}
@@ -104,7 +98,7 @@ public class Person2 extends JFrame implements ActionListener {
 
 
 	/**
-	 * 
+	 * フレームにの乗せるパネル
 	 * @return
 	 */
 	private JPanel getPanel() {
@@ -113,7 +107,7 @@ public class Person2 extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * 
+	 * パネル上で使うグリッドレイアウト
 	 * @return
 	 */
 	private GridBagLayout getGrid() {
@@ -122,7 +116,7 @@ public class Person2 extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * 
+	 * 暗証番号ラベル
 	 * @return
 	 */
 	private JLabel getLblPersonalCode() {
@@ -131,7 +125,7 @@ public class Person2 extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * 
+	 * 暗証番号入力ボックス
 	 * @return
 	 */
 	private JTextField getTxtPersonalCode() {
@@ -139,48 +133,72 @@ public class Person2 extends JFrame implements ActionListener {
 		return txtPersonalCode;
 	}
 
-
+	/**
+	 * ポイント残高参照ボタン
+	 * @return
+	 */
 	private JButton getBtnPointBalance() {
 		if (btnPointBalance == null) btnPointBalance = new JButton();
 		return btnPointBalance;
 	}
 	
-	
+	/**
+	 * ポイント購入ボタン
+	 * @return
+	 */
 	private JButton getBtnPurchasePoints() {
 		if (btnPurchasePoints == null) btnPurchasePoints = new JButton();
 		return btnPurchasePoints;
 	}
 	
-	
+	/**
+	 * ポイント利用ボタン
+	 * @return
+	 */
 	private JButton getBtnUseThePoints() {
 		if (btnUseThePoints == null) btnUseThePoints = new JButton();
 		return btnUseThePoints;
 	}
 	
-	
+	/**
+	 * ポイント入力ボックス
+	 * @return
+	 */
 	private JTextField getTxtPoint() {
 		if (txtPoint == null) txtPoint = new JTextField("", 10);
 		return txtPoint;
 	}
 	
-	
+	/**
+	 * ポイント入力ボックス
+	 * @return
+	 */
 	private JLabel getLblPoint() {
 		if (lblPoint == null) lblPoint = new JLabel();
 		return lblPoint;
 	}
 	
-	
+	/**
+	 * ポイント残高表示ボックス
+	 * @return
+	 */
 	private JTextField getTxtPointBalance() {
-		if (txtPointBalance == null) txtPointBalance = new JTextField("", 20);
+		if (txtPointBalance == null) {
+			txtPointBalance = new JTextField("", 20);
+			txtPointBalance.setEnabled(false);
+		}
 		return txtPointBalance;
 	}
 	
 	
 	
 
-	
+	/**
+	 * ユーザアカウント
+	 */
 	private static PointCardAccount account;
 
+	
 	public static void main(String[] args) {
 
 		// JFrameクラスのインスタンスを生成
@@ -221,21 +239,23 @@ public class Person2 extends JFrame implements ActionListener {
 		// ポイント購入
 		else if (e.getSource() == getBtnPurchasePoints()) {
 			try {
+				// ポイントの加算処理
 				account.parchasePoint(Integer.parseInt(getTxtPoint().getText()));
 				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
 			} catch(NumberFormatException ex) {
 				showMessage("入力されたポイントの数値が不正です。", "警告");				
 			}
 		}
-		//　ポイント利用
+		// ポイント利用
 		else if (e.getSource() == getBtnUseThePoints()) {
 			try {
-				account.usePoint(Integer.parseInt(getTxtPoint().getText()));
-				
+				// ポイント残高との比較
 				if (account.getBalancePoint() < Integer.parseInt(getTxtPoint().getText())) {
 					showMessage("ポイント残高が不足しています。", "警告");
 					return;
 				}
+				// ポイントの減算処理
+				account.usePoint(Integer.parseInt(getTxtPoint().getText()));
 				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
 			} catch(NumberFormatException ex) {
 				showMessage("入力されたポイントの数値が不正です。", "警告");								
@@ -244,7 +264,7 @@ public class Person2 extends JFrame implements ActionListener {
 	}
 	
 	/**
-	 * 
+	 * 各ボタンの活性非活性を制御
 	 * @param bool
 	 */
 	private void setBtnEnabled(boolean bool) {
@@ -254,11 +274,12 @@ public class Person2 extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * 
+	 * メッセージダイアログを生成し表示
+	 * @param text
+	 * @param title
 	 */
 	private void showMessage(String text, String title) {
 		//●タイトルを付けたメッセージ出力
 		JOptionPane.showMessageDialog(this, text, title, JOptionPane.WARNING_MESSAGE);	
-
 	}
 }
