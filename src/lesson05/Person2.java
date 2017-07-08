@@ -224,15 +224,21 @@ public class Person2 extends JFrame implements ActionListener {
 				account.parchasePoint(Integer.parseInt(getTxtPoint().getText()));
 				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
 			} catch(NumberFormatException ex) {
-				
+				showMessage("入力されたポイントの数値が不正いです。", "警告");				
 			}
 		}
 		//　ポイント利用
 		else if (e.getSource() == getBtnUseThePoints()) {
 			try {
+				account.usePoint(Integer.parseInt(getTxtPoint().getText()));
+				
+				if (account.getBalancePoint() < Integer.parseInt(getTxtPoint().getText())) {
+					
+				}
+				
 				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
 			} catch(NumberFormatException ex) {
-				
+				showMessage("入力されたポイントの数値が不正いです。", "警告");								
 			}
 		}
 	}
