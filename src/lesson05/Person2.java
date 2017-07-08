@@ -213,17 +213,25 @@ public class Person2 extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(this, "本文", "タイトル", JOptionPane.WARNING_MESSAGE);	
 			}
 		} 
-		// 利用残高照会
+		// ポイント残高照会
 		else if (e.getSource() == getBtnPointBalance()) {
-			
+			getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
 		}
-		// 
+		// ポイント購入
 		else if (e.getSource() == getBtnPurchasePoints()) {
-			
+			try {
+				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
+			} catch(NumberFormatException ex) {
+				
+			}
 		}
-		//
+		//　ポイント利用
 		else if (e.getSource() == getBtnUseThePoints()) {
-			
+			try {
+				getTxtPointBalance().setText("ポイント残高は" + account.getBalancePoint() + "ポイントです。");
+			} catch(NumberFormatException ex) {
+				
+			}
 		}
 	}
 	
