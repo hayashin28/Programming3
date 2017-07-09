@@ -13,6 +13,8 @@ import lesson04.Task1.MyCar.MyCar;
  */
 public class MyCarView extends Applet{
 
+	private static final long serialVersionUID = 1L;
+	
 	private MyCar car;
 
 	@Override

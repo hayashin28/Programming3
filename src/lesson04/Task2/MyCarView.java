@@ -16,6 +16,8 @@ import lesson04.Task2.MyCar.MyCar;
  */
 public class MyCarView extends Applet {
 
+	private static final long serialVersionUID = 1L;
+
 	private MyCar car;
 	private Button  btnName, btnPower, btnSpeed;
 	// ボタン判定フラグ
