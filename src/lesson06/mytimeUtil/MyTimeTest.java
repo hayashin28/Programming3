@@ -45,5 +45,4 @@ public class MyTimeTest {
 	public void testAdd() {
 		fail("まだ実装されていません");
 	}
-
 }
