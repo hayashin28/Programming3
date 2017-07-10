@@ -1,7 +1,6 @@
 package lesson06.mytimeUtil;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -56,7 +55,7 @@ public class MyTimeTest {
 		// 1時間2分3秒を設定して，秒の値をテストする
 		MyTime t1 = new MyTime();
 		t1.setTime(1, 2, 3);
-		assertEquals("秒は3のはず", 3, t1.getSecond());		fail("まだ実装されていません");
+		assertEquals("秒は3のはず", 3, t1.getSecond());	
 	}
 
 	@Test
