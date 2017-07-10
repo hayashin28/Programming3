@@ -1,5 +1,4 @@
-package lesson06;
-import junit.framework.TestCase;
+package lesson06.mylengthUtil;
 
 public class MyLength {
 
@@ -33,5 +32,4 @@ public class MyLength {
 	public void add() {
 		// 1feet2inch + 1feet11inch = 3feet1inch となっているかをテストする
 	}
-
 }
