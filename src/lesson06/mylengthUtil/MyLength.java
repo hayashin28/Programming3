@@ -2,34 +2,29 @@ package lesson06.mylengthUtil;
 
 public class MyLength {
 
-	/*
-	 * 'mylengthUtil.MyLength.setLength(int, int)' のためのテスト・メソッド
+	private int inch;	// インチ
+	private int feet;	// フィート
+	/**
+	 * 'mylengthUtil.MyLength.setLength(int, int)'メソッド
 	 */
-	public void setLength() {
-
-		//1フィート2インチが正しく設定されているかテストする
-
-		//0フィート14(=12+2)インチが正しく設定されているかテストする
+	public void setLength(int inch, int feet) {
+		this.inch = inch;
+		this.feet = feet;
 	}
 
-	/*
-	 * 'mylengthUtil.MyLength.getFeet()' のためのテスト・メソッド
+	/**
+	 * 'mylengthUtil.MyLength.getFeet()'メソッド
 	 */
-	public void getFeet() {
-		//1フィート2インチが正しく設定されているかテストする
-	}
+	public int getFeet() { return feet;	}
 
-	/*
-	 * 'mylengthUtil.MyLength.getInch()' のためのテスト・メソッド
+	/**
+	 * 'mylengthUtil.MyLength.getInch()'メソッド
 	 */
-	public void testGetInch() {
-		//1フィート2インチが正しく設定されているかテストする
-	}
+	public int getInch() { return inch; }
 
-	/*
-	 * 'mylengthUtil.MyLength.add(MyLength)' のためのテスト・メソッド
+	/**
+	 * 'mylengthUtil.MyLength.add(MyLength)'メソッド
 	 */
 	public void add() {
-		// 1feet2inch + 1feet11inch = 3feet1inch となっているかをテストする
 	}
 }
