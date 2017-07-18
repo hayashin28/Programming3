@@ -9,9 +9,9 @@ public class MyLength {
 	
 
     // 長さオブジェクトに値を設定するメソッド 
-    public void setLength (int ft, int in) {
-    	feet = ft;
-    	inch = in;
+    public void setLength(int ft, int in) {
+    	feet += ft + ((inch + in)/12);
+    	inch = (inch + in) % 12 ;
     }
     // フィートを参照するメソッド 
     public int getFeet() { 
