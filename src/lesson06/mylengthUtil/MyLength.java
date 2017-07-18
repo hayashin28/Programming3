@@ -1,15 +1,16 @@
 package lesson06.mylengthUtil;
 
+
 public class MyLength {
 
-	private int inch;	// インチ
-	private int feet;	// フィート
+	private int inch = 0; // インチ
+	private int feet = 0; // フィート
 	/**
 	 * 'mylengthUtil.MyLength.setLength(int, int)'メソッド
 	 */
 	public void setLength(int inch, int feet) {
-		this.inch = inch;
-		this.feet = feet;
+		this.inch = inch + ((this.feet + feet) / 12);
+		this.feet = (this.feet + feet) % 12;
 	}
 
 	/**
@@ -26,8 +27,8 @@ public class MyLength {
 	 * 'mylengthUtil.MyLength.add(MyLength)'メソッド
 	 */
 	public MyLength add(MyLength len) {
-		
-		
-		return null;
+		MyLength length = new MyLength();
+		length.setLength(inch + len.getInch(), feet + len.getFeet());
+		return length;
 	}
 }
