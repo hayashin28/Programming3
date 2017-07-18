@@ -25,6 +25,9 @@ public class MyLength {
 	/**
 	 * 'mylengthUtil.MyLength.add(MyLength)'メソッド
 	 */
-	public void add() {
+	public MyLength add(MyLength len) {
+		
+		
+		return null;
 	}
 }
