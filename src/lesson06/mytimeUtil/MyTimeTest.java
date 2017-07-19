@@ -2,9 +2,12 @@ package lesson06.mytimeUtil;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
+
 
 public class MyTimeTest extends TestCase {
-
+	
+	@Test
 	/**
 	 * 'myTimeLib.MyTime.setTime(int, int, int)' のためのテスト・メソッド
 	 */
@@ -23,6 +26,7 @@ public class MyTimeTest extends TestCase {
 		assertEquals("秒は3のはず",  3, t1.getSecond());   // (9)
 	}
 	
+	@Test
 	/**
 	 * 'mytimeUtil.MyTime.getHour()' のためのテスト・メソッド
 	 */
@@ -33,6 +37,7 @@ public class MyTimeTest extends TestCase {
 		assertEquals("時間は1のはず", 1, t1.getHour());	
 	}
 
+	@Test
 	/**
 	 * 'mytimeUtil.MyTime.getMinute()' のためのテスト・メソッド
 	 */
@@ -43,7 +48,7 @@ public class MyTimeTest extends TestCase {
 		assertEquals("分は2のはず", 2, t1.getMinute());
 	}
 
-
+	@Test
 	/**
 	 * 'mytimeUtil.MyTime.getSecond()' のためのテスト・メソッド
 	 */
@@ -54,6 +59,7 @@ public class MyTimeTest extends TestCase {
 		assertEquals("秒は3のはず", 3, t1.getSecond());	
 	}
 
+	@Test
 	/**
 	 * 'mytimeUtil.MyTime.add(MyTime)' のためのテスト・メソッド
 	 */
