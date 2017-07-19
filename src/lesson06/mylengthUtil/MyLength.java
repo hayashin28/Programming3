@@ -18,7 +18,7 @@ public class MyLength {
     // インチを参照するメソッド 
     public int getInch() { return inch; }
     // MyLengthオブジェクト同士の加算 
-    public MyLength add(MyLength x) {
-		return x;
-    }
+//    public MyLength add(MyLength x) {
+//		return x;
+ //   }
 }
