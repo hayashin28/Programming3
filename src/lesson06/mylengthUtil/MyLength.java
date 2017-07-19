@@ -20,6 +20,5 @@ public class MyLength {
     // MyLengthオブジェクト同士の加算 
     public MyLength add(MyLength x) {
 		return x;
-    	
     }
 }

@@ -2,11 +2,8 @@ package lesson06.mylengthUtil;
 
 import junit.framework.TestCase;
 
-import org.junit.Test;
-
-public class MyLengthTest extends TestCase {
+public class MyLengyhTest extends TestCase {
 	
-	@Test
 	/**
 	 * 'mylengthUtil.MyLength.setLength(int, int)' のためのテスト・メソッド
 	 */
@@ -15,14 +12,13 @@ public class MyLengthTest extends TestCase {
 		//1フィート2インチが正しく設定されているかテストする
 		MyLength len = new MyLength();
 		len.setLength(1, 2);
-		
-		assertEquals("フィートは1のはず", 1, len.getFeet());
-		assertEquals("インチは2のはず",   2, len.getInch());
+		assertEquals( "フィートは1のはず", 1, len.getFeet() );
+		assertEquals( "インチは2のはず", 2, len.getInch() );
 		
 		//0フィート14(=12+2)インチが正しく設定されているかテストする
 		len.setLength(0, 14);
-//		assertEquals("フィートは1のはず", 1, len.getFeet());
-		assertEquals("インチは14のはず",  2, len.getFeet());
+		assertEquals( "フィートは1のはず", 1, len.getFeet() );
+		assertEquals( "インチは2のはず", 2, len.getInch() );
 	}
 
 	/**
@@ -35,7 +31,7 @@ public class MyLengthTest extends TestCase {
 		assertEquals( "フィートは1のはず", 1, len.getFeet() );
 	}
 
-	/*
+	/**
 	 * 'mylengthUtil.MyLength.getInch()' のためのテスト・メソッド
 	 */
 	public void testGetInch() {
@@ -45,7 +41,8 @@ public class MyLengthTest extends TestCase {
 		assertEquals( "インチは2のはず", 2, len.getInch() );
 	}
 
-	/*
+	
+	/**
 	 * 'mylengthUtil.MyLength.add(MyLength)' のためのテスト・メソッド
 	 */
 	public void testAdd() {
@@ -59,7 +56,7 @@ public class MyLengthTest extends TestCase {
 		MyLength actual;
 		actual = len1.add( len2);
 		
-//		assertEquals("合計長さのフィートは3のはず", 3, actual.getFeet());
-//		assertEquals("合計長さのインチは1のはず",   1, actual.getInch());
+		assertEquals("合計長さのフィートは3のはず", 3, actual.getFeet());
+		assertEquals("合計長さのインチは1のはず", 1, actual.getInch());
 	}
 }
