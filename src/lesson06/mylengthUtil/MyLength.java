@@ -14,9 +14,7 @@ public class MyLength {
     	inch = (inch + in) % 12 ;
     }
     // フィートを参照するメソッド 
-    public int getFeet() { 
-    	return feet; 
-    }
+    public int getFeet() { return feet; }
     // インチを参照するメソッド 
     public int getInch() { return inch; }
     // MyLengthオブジェクト同士の加算 

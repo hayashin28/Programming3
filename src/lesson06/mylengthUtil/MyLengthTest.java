@@ -22,7 +22,7 @@ public class MyLengthTest extends TestCase {
 		//0フィート14(=12+2)インチが正しく設定されているかテストする
 		len.setLength(0, 14);
 //		assertEquals("フィートは1のはず", 1, len.getFeet());
-//		assertEquals("インチは14のはず",  2, len.getFeet());
+		assertEquals("インチは14のはず",  2, len.getFeet());
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class MyLengthTest extends TestCase {
 		//1フィート2インチが正しく設定されているかテストする
 		MyLength len = new MyLength();
 		len.setLength(1, 2);
-//		assertEquals( "インチは2のはず", 2, len.getInch() );
+		assertEquals( "インチは2のはず", 2, len.getInch() );
 	}
 
 	/*
@@ -60,6 +60,6 @@ public class MyLengthTest extends TestCase {
 		actual = len1.add( len2);
 		
 //		assertEquals("合計長さのフィートは3のはず", 3, actual.getFeet());
-//		assertEquals("合計長さのインチは1のはず", 1, actual.getInch());
+//		assertEquals("合計長さのインチは1のはず",   1, actual.getInch());
 	}
 }
