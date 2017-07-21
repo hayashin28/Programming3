@@ -27,7 +27,6 @@ public class MyLength {
     public void setLength(int in) {
     }
     
-    
     // フィートを参照
     public int getFeet() { return feet; }
     // インチを参照
