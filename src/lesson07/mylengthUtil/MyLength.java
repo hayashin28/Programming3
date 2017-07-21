@@ -47,6 +47,8 @@ public class MyLength {
     }
     
     public MyLength add (int in) {
-    	return null;
+    	MyLength len = new MyLength();
+    	len.setLength(feet, inch + in);
+    	return len;
     }
 }
