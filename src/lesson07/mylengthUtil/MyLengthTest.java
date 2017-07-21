@@ -51,7 +51,7 @@ public class MyLengthTest extends TestCase {
 		MyLength len = new MyLength();
 		len.setLength((1 * 12 + 2));
 		assertEquals( "フィートは1のはず", 1, len.getFeet() );
-		assertEquals( "インチは2のはず", 2, len.getInch() );
+		assertEquals( "インチは2のはず",   2, len.getInch() );
 	}
 
 	@Test

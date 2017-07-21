@@ -25,6 +25,8 @@ public class MyLength {
     }
     
     public void setLength(int in) {
+    	inch = (inch + in) % 12;
+    	feet += (in / 12);
     }
     
     // フィートを参照
