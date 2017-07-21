@@ -20,12 +20,12 @@ public class MyLengthTest extends TestCase {
 		MyLength len = new MyLength();
 		len.setLength(1, 2);
 		assertEquals( "フィートは1のはず", 1, len.getFeet() );
-		assertEquals( "インチは2のはず", 2, len.getInch() );
+		assertEquals( "インチは2のはず",   2, len.getInch() );
 		
 		//0フィート14(=12+2)インチが正しく設定されているかテストする
 		len.setLength(0, 14);
 		assertEquals( "フィートは1のはず", 1, len.getFeet() );
-		assertEquals( "インチは2のはず", 2, len.getInch() );
+		assertEquals( "インチは2のはず",   2, len.getInch() );
 	}
 
 	@Test
@@ -39,8 +39,8 @@ public class MyLengthTest extends TestCase {
 		a.setLength(1, 2);
 		MyLength len = new MyLength();
 		len.setLength( a);
-		assertEquals( "フィートは1のはず", 1, len.getFeet() );
-		assertEquals( "インチは2のはず", 2, len.getInch() );
+		assertEquals("フィートは1のはず", 1, len.getFeet() );
+		assertEquals("インチは2のはず",   2, len.getInch() );
 	}
 
 	@Test
@@ -50,7 +50,7 @@ public class MyLengthTest extends TestCase {
 	public void testSetLengthInt() {
 		//14インチ(1フィート2インチ)が正しく設定されているかテストする
 		MyLength len = new MyLength();
-		len.setLength( (1*12+2) );
+		len.setLength((1 * 12 + 2));
 		assertEquals( "フィートは1のはず", 1, len.getFeet() );
 		assertEquals( "インチは2のはず", 2, len.getInch() );
 	}
@@ -93,7 +93,7 @@ public class MyLengthTest extends TestCase {
 		actual = len1.add(len2);
 		
 		assertEquals("合計長さのフィートは3のはず", 3, actual.getFeet());
-		assertEquals("合計長さのインチは1のはず", 1, actual.getInch());
+		assertEquals("合計長さのインチは1のはず",   1, actual.getInch());
 	}
 
 	@Test
@@ -110,7 +110,7 @@ public class MyLengthTest extends TestCase {
 		actual = len1.add(1, 11);
 		
 		assertEquals("合計長さのフィートは3のはず", 3, actual.getFeet());
-		assertEquals("合計長さのインチは1のはず", 1, actual.getInch());
+		assertEquals("合計長さのインチは1のはず",   1, actual.getInch());
 	}
 
 	@Test
