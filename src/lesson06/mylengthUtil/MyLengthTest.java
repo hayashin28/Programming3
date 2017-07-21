@@ -19,9 +19,9 @@ public class MyLengthTest extends TestCase {
 		assertEquals("インチは2のはず",   2, len.getInch());
 
 		//0フィート14(=12+2)インチが正しく設定されているかテストする
-		len.setLength(14, 0);
-		assertEquals("フィートは3のはず", 3, len.getFeet());
-		assertEquals("インチは3のはず",   3, len.getInch());
+		len.setLength(0, 12);
+		assertEquals("フィートは3のはず", 2, len.getFeet());
+		assertEquals("インチは2のはず",   2, len.getInch());
 	}
 
 	@Test
