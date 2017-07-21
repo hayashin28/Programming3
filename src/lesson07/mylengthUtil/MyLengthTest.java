@@ -1,7 +1,6 @@
 package lesson07.mylengthUtil;
 
 import junit.framework.TestCase;
-import lesson06.mylengthUtil.MyLength;
 
 import org.junit.Test;
 
@@ -38,7 +37,7 @@ public class MyLengthTest extends TestCase {
 		MyLength a = new MyLength();
 		a.setLength(1, 2);
 		MyLength len = new MyLength();
-		len.setLength( a);
+		len.setLength(a);
 		assertEquals("フィートは1のはず", 1, len.getFeet() );
 		assertEquals("インチは2のはず",   2, len.getInch() );
 	}
