@@ -7,7 +7,6 @@ package lesson07.mylengthUtil;
  *
  */
 
-
 // 長さを扱うクラス
 public class MyLength {		
 	// フィールド
@@ -20,14 +19,31 @@ public class MyLength {
     	inch = (inch + in) % 12;
     	feet += ft + in / 12;
     }
+    
+    
+    public void setLength(MyLength x) {	
+    }
+    
+    public void setLength(int in) {
+    }
+    
+    
     // フィートを参照
     public int getFeet() { return feet; }
-    //インチを参照
+    // インチを参照
     public int getInch() { return inch; }
     // MyLengthオブジェクト同士の加算
     public MyLength add(MyLength x) {
     	MyLength len = new MyLength();
     	len.setLength(feet + x.getFeet(), inch + x.getInch());
     	return len;
+    }
+    
+    public MyLength add(int ft, int in) {
+    	return null;
+    }
+    
+    public MyLength add (int in) {
+    	return null;
     }
 }
