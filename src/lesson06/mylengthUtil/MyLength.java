@@ -12,8 +12,8 @@ public class MyLength {
 
     // 長さオブジェクトに値を設定
     public void setLength(int ft, int in) {
-    	inch  = (inch + in) % 12;
-    	feet += ft + (in / 12);
+    	inch = (inch + in) % 12;
+    	feet += ft + in / 12;
     }
     // フィートを参照
     public int getFeet() { return feet; }
@@ -22,6 +22,7 @@ public class MyLength {
     // MyLengthオブジェクト同士の加算
     public MyLength add(MyLength x) {
     	MyLength len = new MyLength();
+    	len.setLength(feet + x.getFeet(), inch + x.getInch());
     	return len;
     }
 }
