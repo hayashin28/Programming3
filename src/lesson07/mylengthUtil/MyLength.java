@@ -22,6 +22,7 @@ public class MyLength {
     
     
     public void setLength(MyLength x) {
+    	setLength(x.getFeet(), x.getInch());
     }
     
     public void setLength(int in) {
