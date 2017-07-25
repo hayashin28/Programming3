@@ -12,13 +12,19 @@ public class MyTime {
 	//デフォルトコンストラクタによる生成
 	public MyTime() {}
 	
-	//コンストラクタ
+	//コンストラクタ(1)
 	public MyTime( int h, int m, int s){
 		second = s % 60;
 		minute = ( m + s/60)%60;
 		hour =  h + ( m + s/60)/60;
 	}
-
+	//コンストラクタ(2)
+	public MyTime(MyTime t){
+		hour = t.getHour();
+		minute = t.getMinute();
+		second = t.getSecond();
+	}
+		
 	//メソッド
 	//時間を返す
 	public int getHour() { return hour; }
