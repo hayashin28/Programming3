@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 public class MyCarTest extends TestCase {
 
+
 	public static void main(String[] args) {
 		junit.textui.TestRunner.run(MyCarTest.class);
 	}
@@ -11,12 +12,22 @@ public class MyCarTest extends TestCase {
 	/*
 	 * 'lec0801util.MyCar.MyCar(String, int, int)' のためのテスト・メソッド
 	 */
-	public void testMyCar() {
+	public void testMyCarStringIntInt() {
 		//("フェラーリF430", 450馬力，315km/h)を設定
 		MyCar c = new MyCar("フェラーリF430", 450, 315);
 		assertEquals("車名はフェラーリF430", "フェラーリF430", c.getCarName());
 		assertEquals("馬力は450のはず", 450,c.getHosePower());
 		assertEquals("最高速度は315のはず", 315, c.getMaxSpeed());
+	}
+
+	/*
+	 * 'lec0801util.MyCar.MyCar(String, int)' のためのテスト・メソッド
+	 */
+	public void testMyCarStringInt() {
+		//("フェラーリF430", 450馬力，315km/h)を設定
+		MyCar c = new MyCar("フェラーリF430", 450);
+		assertEquals("車名はフェラーリF430", "フェラーリF430", c.getCarName());
+		assertEquals("馬力は450のはず", 450,c.getHosePower());
 	}
 
 	/*
@@ -45,5 +56,4 @@ public class MyCarTest extends TestCase {
 		MyCar c = new MyCar("フェラーリF430", 450, 315);
 		assertEquals("最高速度は315のはず", 315, c.getMaxSpeed());
 	}
-
 }

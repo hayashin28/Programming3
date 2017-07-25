@@ -18,6 +18,12 @@ public class MyCar {
 		this.hosePower	= hosePower;
 		this.maxSpeed	= maxSpeed;
 	}
+	
+	public MyCar(String carName, int hosePower) {
+		this.carName	= carName;
+		this.hosePower  = hosePower;
+		
+	}
 
 	// 車名を返す
 	public String getCarName() { return carName; }
