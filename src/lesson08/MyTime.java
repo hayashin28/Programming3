@@ -9,6 +9,9 @@ public class MyTime {
 	//秒を記憶する
 	private int second;
 	
+	//デフォルトコンストラクタによる生成
+	public MyTime() {}
+	
 	//コンストラクタ
 	public MyTime( int h, int m, int s){
 		second = s % 60;
