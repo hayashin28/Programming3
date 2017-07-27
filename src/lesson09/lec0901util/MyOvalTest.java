@@ -79,5 +79,3 @@ public class MyOvalTest  extends TestCase {
 		assertFalse("o2とoは衝突しないはず", o2.isCollision(o));
 	}
 }
-
-}

@@ -69,7 +69,9 @@ public class MyOval {
 	// 青色の要素を引数の値に設定する
 	public void setBlue(int colorBlue) { this.colorBlue = colorBlue; }
 	// 他のMyOvalオブジェクト：MyOval 	引数のMyOvalオブジェクトに，この円が重なっているか否かを判定する。
-	public int isCollision 	boolean 	
+	public boolean isCollision(MyOval oval) {
+		return (xPosition + radius > oval.getX() || yPosition + radius > oval.getY());
+	}
 
 
 	
