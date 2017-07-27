@@ -47,6 +47,7 @@ public class MyOval {
 		this.xPosition  = xPosition;	// 始点のx座標
 		this.yPosition  = yPosition;	// 始点のy座標
 		this.radius	    = radius;		// 半径：int
+		this.colorRed=0; this.colorGreen=0; this.colorBlue=255;
 	}
 	
 	
@@ -70,11 +71,12 @@ public class MyOval {
 	public void setBlue(int colorBlue) { this.colorBlue = colorBlue; }
 	// 他のMyOvalオブジェクト：MyOval 	引数のMyOvalオブジェクトに，この円が重なっているか否かを判定する。
 	public boolean isCollision(MyOval oval) {
-		return (xPosition + radius > oval.getX() || yPosition + radius > oval.getY());
+		int x1, x2, y1, y2;
+		x1 = (xPosition + radius);
+		y1 = (yPosition + radius);
+		x2 = (oval.getX() + oval.getR());
+		y2 = (oval.getY() + oval.getR()); 
+		int kyori = (int)(Math.sqrt((x1-x2)^2+(y1+y2)^2));
+		return ((radius + oval.getR()) > kyori);
 	}
-
-
-	
-	
-	
 }
